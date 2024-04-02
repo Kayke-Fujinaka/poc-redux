@@ -1,11 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { persistReducer, persistStore } from "redux-persist";
+import { PersistConfig, persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/es/storage";
 
+import { IReduxState } from "../interfaces/store";
 import combineReducers from "./reducers";
 
-const persistConfig = {
-  key: "security",
+const persistConfig: PersistConfig<IReduxState> = {
+  key: "root",
   storage,
 };
 
