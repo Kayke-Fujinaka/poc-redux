@@ -3,10 +3,11 @@ import { PersistConfig, persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/es/storage";
 
 import { IReduxState } from "../interfaces/store";
+import { env } from "../utils/environments";
 import combineReducers from "./reducers";
 
 const persistConfig: PersistConfig<IReduxState> = {
-  key: "root",
+  key: env.REDUX_PERSIST_KEY,
   storage,
 };
 
